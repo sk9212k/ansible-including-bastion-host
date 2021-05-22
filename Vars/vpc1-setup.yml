@@ -1,0 +1,16 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: Create vprofile VPC
+      ec2_vpc_net:
+        name: sohail 
+        cidr_block: 172.20.0.0/16 
+        region: us-east-2
+        dns_support: yes
+        dns_hostnames: yes
+        tenancy: default
+        state: present
+      register: vpcout
+
+
